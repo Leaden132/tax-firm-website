@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contact Hills Tax | Book Free Tax Consultation Toronto | Cross-Border Tax Help"
+  description="Contact Hills Tax for a free consultation. Located at 20 Edward Street, Toronto. Expert cross-border tax services for Canada and US. Call or email today."
+  keywords="tax consultation Toronto, contact tax accountant, cross-border tax help Toronto, book tax appointment"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch for a free consultation. We're here to help with all your tax and accounting needs.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-form-wrap">
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below and we'll get back to you within one business day.</p>
+        <form action="mailto:hills.tax@outlook.com" method="POST" enctype="text/plain" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(416) 555-0000" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="cross-border-tax">Cross-Border Tax</option>
+                <option value="personal-tax">Personal Tax Preparation</option>
+                <option value="corporate-tax">Corporate Tax</option>
+                <option value="bookkeeping">Bookkeeping</option>
+                <option value="tax-planning">Tax Planning</option>
+                <option value="compliance">IRS/CRA Compliance</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your tax situation..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+      <aside class="contact-info">
+        <div class="info-card">
+          <h3>Office Location</h3>
+          <address>
+            <p>20 Edward Street<br>Toronto, ON M5G 0C5<br>Canada</p>
+          </address>
+        </div>
+        <div class="info-card">
+          <h3>Contact Details</h3>
+          <p><strong>Email:</strong><br><a href="mailto:hills.tax@outlook.com">hills.tax@outlook.com</a></p>
+          <p><strong>Phone:</strong><br><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Office Hours</h3>
+          <p>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday: By appointment<br>Sunday: Closed</p>
+        </div>
+        <div class="info-card highlight">
+          <h3>Free Consultation</h3>
+          <p>Not sure where to start? Book a free initial consultation and we'll assess your needs and provide a clear path forward.</p>
+          <a href="tel:+1XXXXXXXXXX" class="btn btn-primary" style="margin-top: 1rem; display: block;">Call Now</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <iframe
+      title="Hills Tax Office Location - 20 Edward Street, Toronto"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4!2d-79.3866!3d43.6602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b5!2s20+Edward+St%2C+Toronto%2C+ON+M5G+0C5!5e0!3m2!1sen!2sca!4v1"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--olive);
+    color: var(--white);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, var(--olive) 0%, var(--olive-dark) 100%);
+  }
+  .page-hero > .container { position: relative; z-index: 1; }
+  .page-hero h1 { color: var(--white); font-size: 2.5rem; margin-bottom: 1rem; }
+  .page-hero p { color: rgba(255,255,255,0.75); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+
+  .contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; }
+
+  .contact-form-wrap h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+  .contact-form-wrap > p { color: var(--gray-600); margin-bottom: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--olive); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: all var(--transition);
+    background: var(--white);
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--leaf);
+    box-shadow: 0 0 0 3px rgba(138, 173, 58, 0.15);
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+  .info-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+  }
+  .info-card.highlight {
+    background: var(--leaf-pale);
+    border-color: rgba(138, 173, 58, 0.3);
+  }
+  .info-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--olive); }
+  .info-card p { color: var(--gray-600); font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .info-card a { color: var(--olive); font-weight: 500; }
+  .info-card a:hover { color: var(--leaf); }
+  address { font-style: normal; }
+
+  .map-section { line-height: 0; }
+  .map-section iframe { width: 100%; }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

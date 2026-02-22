@@ -1,0 +1,157 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
+}
+
+const { title, description, keywords = '', canonical = '' } = Astro.props;
+const siteUrl = 'https://hillstax.ca';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Hills Tax",
+  "description": "Cross-border tax specialists providing expert tax preparation, bookkeeping, and tax planning services for individuals and businesses in Canada and the United States.",
+  "url": siteUrl,
+  "telephone": "(XXX) XXX-XXXX",
+  "email": "hills.tax@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 Edward Street",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "postalCode": "M5G 0C5",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.6602",
+    "longitude": "-79.3844"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Toronto" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "120",
+    "bestRating": "5"
+  },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00"
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Hills Tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --olive: #3a4915;
+      --olive-light: #4a5e20;
+      --olive-dark: #2a360e;
+      --leaf: #8aad3a;
+      --leaf-light: #a3c45a;
+      --leaf-pale: #e8f0d4;
+      --cream: #faf9f5;
+      --white: #FFFFFF;
+      --gray-50: #f7f7f5;
+      --gray-100: #efefe9;
+      --gray-200: #e2e0d6;
+      --gray-300: #d1cfc2;
+      --gray-600: #6b6b60;
+      --gray-800: #3a3a32;
+      --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --max-width: 1200px;
+      --transition: 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      line-height: 1.7;
+      background: var(--cream);
+    }
+    h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--olive); line-height: 1.3; }
+    a { color: var(--olive); text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      background: var(--leaf);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--leaf-light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(138, 173, 58, 0.35); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-secondary:hover { background: var(--white); color: var(--olive); }
+    .section { padding: 5rem 0; }
+    .section-title {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 768px) {
+      .section { padding: 3rem 0; }
+      .section-title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

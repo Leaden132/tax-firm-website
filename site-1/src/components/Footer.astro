@@ -1,0 +1,80 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/logo.png" alt="Hills Tax" class="footer-logo-img" />
+        </div>
+        <p>Toronto's trusted cross-border tax specialists. Expert Canada & US tax services for individuals and businesses.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/cross-border-tax/">Cross-Border Tax</a></li>
+          <li><a href="/services/">Personal Tax</a></li>
+          <li><a href="/services/">Corporate Tax</a></li>
+          <li><a href="/bookkeeping/">Bookkeeping</a></li>
+          <li><a href="/services/">Tax Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/services/">All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <address>
+          <p>20 Edward Street<br>Toronto, ON M5G 0C5</p>
+          <p><a href="mailto:hills.tax@outlook.com">hills.tax@outlook.com</a></p>
+          <p><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {year} Hills Tax. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: var(--olive-dark); color: rgba(255,255,255,0.8); padding: 4rem 0 0; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+  }
+  .footer-logo { margin-bottom: 1.25rem; }
+  .footer-logo-img { height: 42px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+  .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.6; }
+  .footer-links h4, .footer-contact h4 {
+    color: var(--leaf);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    font-family: var(--font-heading);
+  }
+  .footer-links ul { list-style: none; }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a { color: rgba(255,255,255,0.6); font-size: 0.95rem; transition: color var(--transition); }
+  .footer-links a:hover { color: var(--leaf-light); }
+  address { font-style: normal; }
+  .footer-contact p { margin-bottom: 0.5rem; color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+  .footer-contact a { color: rgba(255,255,255,0.6); transition: color var(--transition); }
+  .footer-contact a:hover { color: var(--leaf-light); }
+  .footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
