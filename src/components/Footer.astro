@@ -1,0 +1,76 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-text">Hills</span><span class="logo-accent">Tax</span>
+        </div>
+        <p>Toronto's trusted cross-border tax specialists. Expert Canada & US tax services for individuals and businesses.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/cross-border-tax/">Cross-Border Tax</a></li>
+          <li><a href="/services/">Personal Tax</a></li>
+          <li><a href="/services/">Corporate Tax</a></li>
+          <li><a href="/bookkeeping/">Bookkeeping</a></li>
+          <li><a href="/services/">Tax Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/services/">All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <address>
+          <p>20 Edward Street<br>Toronto, ON M5G 0C5</p>
+          <p><a href="mailto:hills.tax@outlook.com">hills.tax@outlook.com</a></p>
+          <p><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {year} Hills Tax. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: var(--navy-dark); color: var(--gray-200); padding: 4rem 0 0; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+  }
+  .footer-logo { font-size: 1.5rem; margin-bottom: 1rem; font-family: var(--font-heading); }
+  .footer-logo .logo-text { color: var(--white); font-weight: 700; }
+  .footer-logo .logo-accent { color: var(--gold); font-weight: 700; }
+  .footer-brand p { color: var(--gray-300); font-size: 0.95rem; line-height: 1.6; }
+  .footer-links h4, .footer-contact h4 { color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem; font-family: var(--font-heading); }
+  .footer-links ul { list-style: none; }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a { color: var(--gray-300); font-size: 0.95rem; transition: color var(--transition); }
+  .footer-links a:hover { color: var(--gold); }
+  address { font-style: normal; }
+  .footer-contact p { margin-bottom: 0.5rem; color: var(--gray-300); font-size: 0.95rem; }
+  .footer-contact a { color: var(--gray-300); transition: color var(--transition); }
+  .footer-contact a:hover { color: var(--gold); }
+  .footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

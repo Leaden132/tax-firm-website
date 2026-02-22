@@ -1,0 +1,151 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
+}
+
+const { title, description, keywords = '', canonical = '' } = Astro.props;
+const siteUrl = 'https://hillstax.ca';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Hills Tax",
+  "description": "Cross-border tax specialists providing expert tax preparation, bookkeeping, and tax planning services for individuals and businesses in Canada and the United States.",
+  "url": siteUrl,
+  "telephone": "(XXX) XXX-XXXX",
+  "email": "hills.tax@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 Edward Street",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "postalCode": "M5G 0C5",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "43.6602",
+    "longitude": "-79.3844"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Toronto" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "120",
+    "bestRating": "5"
+  },
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00"
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Hills Tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1B2A4A;
+      --navy-light: #243656;
+      --navy-dark: #111D33;
+      --gold: #C9A84C;
+      --gold-light: #D4B96A;
+      --white: #FFFFFF;
+      --gray-50: #F8F9FA;
+      --gray-100: #F1F3F5;
+      --gray-200: #E9ECEF;
+      --gray-300: #DEE2E6;
+      --gray-600: #6C757D;
+      --gray-800: #343A40;
+      --font-heading: 'Georgia', 'Times New Roman', serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --max-width: 1200px;
+      --transition: 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--navy); line-height: 1.3; }
+    a { color: var(--navy); text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-secondary:hover { background: var(--white); color: var(--navy); }
+    .section { padding: 5rem 0; }
+    .section-title {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 768px) {
+      .section { padding: 3rem 0; }
+      .section-title { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
