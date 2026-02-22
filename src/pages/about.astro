@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="About Hills Tax | Trusted Toronto Tax Accountants | 15+ Years Experience"
+  description="Learn about Hills Tax, Toronto's trusted cross-border tax specialists with over 15 years of experience serving 500+ clients. CPA certified professionals dedicated to your financial success."
+  keywords="Toronto tax accountant, CPA Toronto, cross-border tax expert, trusted tax firm Toronto"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Hills Tax</h1>
+      <p>Toronto's trusted cross-border tax specialists with over 15 years of dedicated service.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-intro">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Founded in Toronto, Hills Tax was built on a simple belief: cross-border tax compliance shouldn't be a source of stress. With Canada and the United States sharing the world's longest international border, millions of people and businesses have financial ties to both countries. Yet finding a tax professional who truly understands both systems can be incredibly difficult.</p>
+        <p>That's where we come in. Our team of experienced tax professionals specializes in the unique challenges of Canada-US taxation. We've spent over 15 years building deep expertise in both the Canadian Revenue Agency (CRA) and Internal Revenue Service (IRS) systems, helping over 500 clients navigate their cross-border obligations with confidence.</p>
+        <p>Today, Hills Tax serves individuals, families, and businesses throughout the Greater Toronto Area and across Canada. Whether you're an American expat, a Canadian snowbird, a cross-border business owner, or simply someone with financial ties to both countries, we have the expertise to help.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Why Clients Trust Us</h2>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-number">15+</div>
+          <h3>Years of Experience</h3>
+          <p>Over a decade and a half of specialized cross-border tax expertise serving clients in Canada and the US.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-number">500+</div>
+          <h3>Clients Served</h3>
+          <p>Hundreds of satisfied individuals and businesses trust us with their most complex tax situations.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-number">4.9★</div>
+          <h3>Google Rating</h3>
+          <p>Consistently rated among the top tax firms in Toronto with over 120 five-star reviews.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-number">2</div>
+          <h3>Countries Covered</h3>
+          <p>Full expertise in both Canadian (CRA) and American (IRS) tax systems, treaties, and compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>Integrity</h3>
+          <p>We maintain the highest ethical standards in everything we do. Your trust is our most valued asset, and we earn it through honest, transparent service.</p>
+        </div>
+        <div class="value-item">
+          <h3>Expertise</h3>
+          <p>We invest heavily in ongoing education and training to stay current with ever-changing tax laws in both Canada and the United States.</p>
+        </div>
+        <div class="value-item">
+          <h3>Client Focus</h3>
+          <p>Every client receives personalized attention. We take the time to understand your unique situation and provide tailored solutions that work for you.</p>
+        </div>
+        <div class="value-item">
+          <h3>Excellence</h3>
+          <p>We hold ourselves to the highest professional standards. Every return we prepare, every plan we create is thoroughly reviewed for accuracy and optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Professional Credentials</h2>
+      <p class="section-subtitle">Our team holds recognized professional designations and maintains active memberships in leading industry organizations.</p>
+      <div class="credentials-grid">
+        <div class="credential">CPA Certified</div>
+        <div class="credential">CRA Authorized Representative</div>
+        <div class="credential">IRS Enrolled Agent</div>
+        <div class="credential">Cross-Border Tax Specialist</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-content">
+      <h2>Ready to Work With Us?</h2>
+      <p>Schedule a free consultation to learn how our expertise can help simplify your tax situation.</p>
+      <a href="/contact/" class="btn btn-primary">Book Free Consultation</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+  .page-hero h1 { color: var(--white); font-size: 2.5rem; margin-bottom: 1rem; }
+  .page-hero p { color: var(--gray-200); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+
+  .alt-bg { background: var(--gray-50); }
+
+  .about-text { max-width: 800px; margin: 0 auto; }
+  .about-text h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+  .about-text p { color: var(--gray-600); margin-bottom: 1.25rem; font-size: 1.05rem; }
+
+  .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .trust-card {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+  }
+  .trust-number { font-size: 2.5rem; font-weight: 700; color: var(--gold); font-family: var(--font-heading); }
+  .trust-card h3 { font-size: 1.1rem; margin: 0.5rem 0; }
+  .trust-card p { color: var(--gray-600); font-size: 0.9rem; }
+
+  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .value-item { padding: 1.5rem; border-left: 3px solid var(--gold); }
+  .value-item h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .value-item p { color: var(--gray-600); font-size: 0.95rem; }
+
+  .credentials-grid { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .credential {
+    background: var(--white);
+    border: 2px solid var(--gold);
+    color: var(--navy);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    text-align: center;
+  }
+  .cta-content h2 { color: var(--white); margin-bottom: 1rem; }
+  .cta-content p { color: var(--gray-200); margin-bottom: 2rem; }
+
+  @media (max-width: 768px) {
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>
